@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
-import './styles.css';
 import { Loader } from './Loader';
+import './styles.css';
 
 const Details = React.lazy(() => {
   // Artificially making loadind the <Details> component take 1 second
@@ -19,7 +19,7 @@ export const App = () => {
             <img src={require('./logo.png')} alt='Restaurant logo' />
             <h1>Your reservation is confirmed.</h1>
           </div>
-          <Suspense fallback={Loader}>
+          <Suspense fallback={<Loader />}>
             <Details />
           </Suspense>
         </div>
